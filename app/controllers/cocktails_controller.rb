@@ -10,4 +10,14 @@ class CocktailsController < ApplicationController
   def new
     @cocktail = Cocktail.new
   end
+
+  def create
+    @cocktail = Cocktail.create(cocktail_params)
+  end
+
+  private
+
+  def cocktail_params
+    params.require(:cocktail).permit(:name)
+  end
 end
