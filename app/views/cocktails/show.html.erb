@@ -1,18 +1,25 @@
 <h1><%= @cocktail.name %></h1>
 
-<%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete  %>
+<div class="button"> <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete  %> </div>
 
 <p><%= @cocktail.name %></p>
 <ul>
 <% @cocktail.doses.each do |dose| %>
-<li><%= dose.description %> <%= dose.ingredient.name %> <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete  %></li>
+<li><%= dose.description %> <%= dose.ingredient.name %>
+  <div class="button">
+    <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete  %></li>
+  </div>
 <% end %>
 </ul>
 
 <% if @cocktail.doses.empty? %>
-<p><%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail)  %></p>
+  <div class="button">
+    <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail)  %>
+  </div>
 <% else %>
-<p><%= link_to 'Add another dose', new_cocktail_dose_path(@cocktail)  %></p>
+  <div class="button">
+    <%= link_to 'Add another dose', new_cocktail_dose_path(@cocktail)  %>
+  </div>
 <% end %>
 
-<%= link_to "Back", root_path  %>
+<div class="button"> <%= link_to "Back", root_path  %> </div>

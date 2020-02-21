@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>How to Mix</title>
+    <title>How to Mixxx</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,8 @@
   </head>
 
   <body>
-    <%= yield %>
+    <p class="logo"><i class="fas fa-cocktail"></i> <%= link_to "How to Mixx", root_path  %></p>
+    <div class="container d-flex flex-column"> <%= yield %> </div>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
